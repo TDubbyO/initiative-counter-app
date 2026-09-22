@@ -16,4 +16,17 @@ addBtn.addEventListener('click', function(){
 
     charName.value = ''
     initRoll.value = ''
+
+    renderList()
 })
+
+function renderList(){
+    let listItems=''
+    for (let i=0; i<combatants.length; i++){
+        listItems += `
+            <li>${combatants[i].character} - ${combatants[i].initiative}</li>
+        `
+    }
+    console.log(listItems)
+    combatantList.innerHTML = listItems
+}
